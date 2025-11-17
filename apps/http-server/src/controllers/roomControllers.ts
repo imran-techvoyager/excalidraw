@@ -133,7 +133,7 @@ export async function fetchAllRoomsController(req: Request, res: Response) {
       },
     });
 
-    const sortedRooms = rooms.sort((a, b) => {
+    const sortedRooms = rooms.sort((a: any, b: any) => {
       const aLatestChat = a.Chat[0]?.createdAt || a.createdAt;
       const bLatestChat = b.Chat[0]?.createdAt || b.createdAt;
       return new Date(bLatestChat).getTime() - new Date(aLatestChat).getTime();
